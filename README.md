@@ -38,13 +38,13 @@ Siga os passos abaixo:
 #### Clonando usando a URL da web.
 
 ```bash
-$ git clone https://github.com/p1reis/banking-transaction-system.git && cd banking-transaction-system
+$ git clone https://github.com/p1reis/crypto-api.git && cd crypto-api
 ```
 
 #### Usando uma chave SSH protegida por senha
 
 ```bash
-$ git clone git@github.com:p1reis/banking-transaction-system.git && cd banking-transaction-system
+$ git clone git@github.com:p1reis/crypto-api.git && cd crypto-api
 ```
 
 ### 2. Instale as dependências:
