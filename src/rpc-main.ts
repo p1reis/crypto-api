@@ -13,7 +13,7 @@ async function bootstrap() {
   });
 
   await app.listen();
-  Logger.log('✅ HTTP server is running on port 3000', 'RPC Server');
+  Logger.log('✅ HTTP server is running on port 8877', 'RPC Server');
 }
 
 bootstrap();
