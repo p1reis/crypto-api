@@ -12,7 +12,7 @@
     "start:rpc": "ts-node src/rpc-main.ts",
     "start:dev": "nest start --watch",
     "start:dev:rpc": "ts-node-dev --respawn --project tsconfig.json -r tsconfig-paths/register src/rpc-main.ts",
-    "start:dev:all": "concurrently \"pnpm run start:dev\" \"pnpm run start:dev:rpc\"",
+    "start:dev:all": "concurrently \"pnpm run start:dev:rpc\" \"pnpm run start:dev\"",
     "start:debug": "nest start --debug --watch"
   },
   "dependencies": {
