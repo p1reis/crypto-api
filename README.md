@@ -100,8 +100,4 @@ Sinta-se à vontade para entrar em contato comigo. Abaixo estão as melhores man
 - **Email**: Entre em contato por email para perguntas ou assistência em [contatodopedroreis@gmail.com](mailto:contatodopedroreis@gmail.com).
 - **LinkedIn**: Conecte-se comigo ou me siga em [in/p-reis](https://www.linkedin.com/in/p-reis/)
 
-## 📃 Licença
-
-Licenciado sob a [MIT licensed](LICENSE).
-
 <p align="right"><a href="#top">Back to top</a></p>
