@@ -88,9 +88,11 @@ export class WalletService {
     return {
       [Coin.BTC]: 0,
       [Coin.ETH]: 0,
-      [Coin.BRL]: 0,
-      [Coin.DOL]: 0,
-      [Coin.EUR]: 0,
+      [Coin.BNB]: 0,
+      [Coin.DOGE]: 0,
+      [Coin.SOL]: 0,
+      [Coin.XRP]: 0,
+      [Coin.LTC]: 0
     };
   }
 

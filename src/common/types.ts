@@ -4,11 +4,13 @@ export interface Balance {
 }
 
 export enum Coin {
-  BTC = 'BTC',
-  ETH = 'ETH',
-  BRL = 'BRL',
-  DOL = 'DOL',
-  EUR = 'EUR',
+  BTC = 'BTC',       // Bitcoin
+  ETH = 'ETH',       // Ethereum
+  BNB = 'BNB',       // Binance Coin
+  SOL = 'SOL',       // Solana
+  XRP = 'XRP',       // Ripple
+  DOGE = 'DOGE',     // Dogecoin
+  LTC = 'LTC',       // Litecoin
 }
 
 export interface TransactionResult {

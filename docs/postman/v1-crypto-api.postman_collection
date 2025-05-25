@@ -1,9 +1,11 @@
 {
 	"info": {
-		"_postman_id": "2c835fe1-4fdd-4509-b3b6-32ed4c76ab0c",
+		"_postman_id": "bd337cd8-cb93-4c5e-9aa5-1c18585ecdab",
 		"name": "crypto-api",
+		"description": "Api para o projeto Web Services e interoperabilidade com RPC, para atividade avaliativa de Sistemas Distribuídos na turma CC7M/2025",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "40334181"
+		"_exporter_id": "34772834",
+		"_collection_link": "https://www.postman.com/p1-reis/workspace/pedro-public-workspace/collection/34772834-bd337cd8-cb93-4c5e-9aa5-1c18585ecdab?action=share&source=collection_link&creator=34772834"
 	},
 	"item": [
 		{
@@ -28,7 +30,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"owner\": \"{{$randomFullName}}\",\r\n  \"balance\": {\r\n    \"BTC\": {{$randomInt}},\r\n    \"ETH\": {{$randomInt}},\r\n    \"BRL\": {{$randomInt}}\r\n  },\r\n  \"isActive\": true\r\n}\r\n",
+							"raw": "{\r\n  \"owner\": \"{{$randomFullName}}\",\r\n  \"balance\": {\r\n    \"BTC\": {{$randomInt}},\r\n    \"ETH\": {{$randomInt}},\r\n    \"BNB\": {{$randomInt}},\r\n    \"SOL\": {{$randomInt}},\r\n    \"DOGE\": {{$randomInt}}\r\n  }\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -45,7 +47,188 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Success using balance",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"owner\": \"{{$randomFullName}}\",\r\n  \"balance\": {\r\n    \"BTC\": {{$randomInt}},\r\n    \"ETH\": {{$randomInt}},\r\n    \"BNB\": {{$randomInt}},\r\n    \"SOL\": {{$randomInt}},\r\n    \"DOGE\": {{$randomInt}}\r\n  },\r\n  \"isActive\": true\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/wallet",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "125"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7d-HM6FioQZgskvp+Io11eKLvcFJqU\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 May 2025 03:31:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"owner\": \"Ben Glover\",\n    \"balance\": {\n        \"BTC\": 44,\n        \"ETH\": 788,\n        \"BRL\": 672\n    },\n    \"isActive\": true,\n    \"createdAt\": \"2025-05-15T03:31:52.299Z\"\n}"
+						},
+						{
+							"name": "Success without balance",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"owner\": \"{{$randomFullName}}\",\r\n  \"isActive\": true\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/wallet",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "139"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8b-+c7SGpVCpnDmWRItTMbSPdPa8d0\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 May 2025 03:33:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 6,\n    \"owner\": \"Denise Parker\",\n    \"balance\": {\n        \"BTC\": 0,\n        \"ETH\": 0,\n        \"BRL\": 0,\n        \"DOL\": 0,\n        \"EUR\": 0\n    },\n    \"isActive\": true,\n    \"createdAt\": \"2025-05-15T03:33:39.632Z\"\n}"
+						},
+						{
+							"name": "Success without active",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"owner\": \"{{$randomFullName}}\",\r\n  \"balance\": {\r\n    \"BTC\": {{$randomInt}},\r\n    \"ETH\": {{$randomInt}},\r\n    \"BNB\": {{$randomInt}},\r\n    \"SOL\": {{$randomInt}},\r\n    \"DOGE\": {{$randomInt}}\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/wallet",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "137"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"89-kWXN2XQQs06AAXPHrNwR90Nb3QE\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 May 2025 03:34:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 7,\n    \"owner\": \"Mrs. Virgil Bergstrom\",\n    \"balance\": {\n        \"BTC\": 172,\n        \"ETH\": 861,\n        \"BRL\": 371\n    },\n    \"isActive\": true,\n    \"createdAt\": \"2025-05-15T03:34:01.206Z\"\n}"
+						}
+					]
 				},
 				{
 					"name": "Get all wallets",
@@ -62,7 +245,110 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Success - wallets",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/wallet",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "261"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"105-gQT3AMG1raTy3k5eEyhoT6UCoEo\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 May 2025 03:35:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"owner\": \"Gilbert Hintz\",\n        \"balance\": {\n            \"BTC\": 885,\n            \"ETH\": 203,\n            \"BRL\": 880\n        },\n        \"isActive\": true,\n        \"createdAt\": \"2025-05-15T03:35:16.181Z\"\n    },\n    {\n        \"id\": 2,\n        \"owner\": \"Melinda Roob V\",\n        \"balance\": {\n            \"BTC\": 397,\n            \"ETH\": 68,\n            \"BRL\": 743\n        },\n        \"isActive\": true,\n        \"createdAt\": \"2025-05-15T03:35:17.052Z\"\n    }\n]"
+						},
+						{
+							"name": "Success - no wallets",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/wallet",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 May 2025 03:34:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[]"
+						}
+					]
 				},
 				{
 					"name": "Disable wallet",
@@ -70,18 +356,125 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/wallet/3/disable",
+							"raw": "{{baseUrl}}/wallet/2/disable",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"wallet",
-								"3",
+								"2",
 								"disable"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Success existing wallet",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/wallet/2/disable",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"2",
+										"disable"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "66"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"42-xtB9mCRLd4qyzzNZu6C0YXaxL8w\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 May 2025 03:37:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Melinda Roob V's wallet was desactivated with sucess\"\n}"
+						},
+						{
+							"name": "Error - wallet not found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/wallet/100/disable",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"100",
+										"disable"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "71"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"47-0Xj3TAzfkXm2Di0YGeeM6X/b39M\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 May 2025 03:37:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Wallet was not found\",\n    \"error\": \"Not Found\",\n    \"statusCode\": 404\n}"
+						}
+					]
 				},
 				{
 					"name": "Get wallet",
@@ -99,7 +492,60 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Get existent wallet",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/wallet/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "129"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"81-lrpNeSkRZD+izIpfQHfqSQVniFg\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 May 2025 03:37:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"owner\": \"Gilbert Hintz\",\n    \"balance\": {\n        \"BTC\": 885,\n        \"ETH\": 203,\n        \"BRL\": 880\n    },\n    \"isActive\": true,\n    \"createdAt\": \"2025-05-15T03:35:16.181Z\"\n}"
+						}
+					]
 				},
 				{
 					"name": "Get wallet history",
@@ -118,7 +564,114 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/wallet/history/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"history",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "400"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"190-Ul8V6jRwRdvG1KcpzhvfJBSKpUY\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 May 2025 03:38:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"21d34664-7fe7-4fb0-89b4-13281b9536ad\",\n        \"type\": \"deposit\",\n        \"to\": \"1\",\n        \"coin\": \"BTC\",\n        \"amount\": 4.8,\n        \"date\": \"2025-05-15T03:38:25.358Z\"\n    },\n    {\n        \"id\": \"c2742b71-f819-4ced-9c8b-8e78429c329b\",\n        \"type\": \"deposit\",\n        \"to\": \"1\",\n        \"coin\": \"BTC\",\n        \"amount\": 4.8,\n        \"date\": \"2025-05-15T03:38:26.417Z\"\n    },\n    {\n        \"id\": \"0f83c6b6-ef49-4223-a02c-7c417a12099b\",\n        \"type\": \"withdraw\",\n        \"from\": \"1\",\n        \"coin\": \"BTC\",\n        \"amount\": 0.5,\n        \"date\": \"2025-05-15T03:38:29.834Z\"\n    }\n]"
+						},
+						{
+							"name": "No existent wallet",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/wallet/history/3",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"history",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 May 2025 03:39:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[]"
+						}
+					]
 				},
 				{
 					"name": "Get balance",
@@ -137,7 +690,61 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/wallet/1/balance",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"1",
+										"balance"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "81"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"51-RWflwn6Dz45xIorXjlKkmfUvD4k\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 May 2025 03:40:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"owner\": \"Gilbert Hintz\",\n    \"balance\": {\n        \"BTC\": 894.0999999999999,\n        \"ETH\": 203,\n        \"BRL\": 880\n    }\n}"
+						}
+					]
 				}
 			]
 		},
