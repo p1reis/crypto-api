@@ -9,6 +9,8 @@ e interoperabilidade com RPC.
 
 As criptomoedas, como o Bitcoin e o Ethereum, já ganharam popularidade e valor. Com isso, surge a necessidade de desenvolver ferramentas que facilitem o gerenciamento dessas criptomoedas, como o controle de compras, vendas, transferências, consultas de saldo, etc. 
 
+Você pode ver o diagrama do sistema [aqui](https://github.com/p1reis/crypto-api/blob/main/docs/diagrams/diagram.png)
+
 ## 🎯 **Funcionalidades**
 
 1. **Cadastro de carteira de criptomoedas:**
